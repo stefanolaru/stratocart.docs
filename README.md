@@ -1,0 +1,2 @@
+# stratocart.docs
+Stratocart docs
