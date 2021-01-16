@@ -1,6 +1,6 @@
 # Customizing UI
 
-The UI is built from a JSON schema, HTML code will be outputed as referenced below.
+The UI is built from a JSON schema, HTML code is outputed as below.
 
 ```json
 {
@@ -27,7 +27,7 @@ The UI is built from a JSON schema, HTML code will be outputed as referenced bel
     },
 ```
 
-Will output this.
+Will output this HTML.
 
 ```html
 <div class="step-header">
@@ -37,3 +37,19 @@ Will output this.
     </button>
 </div>
 ```
+
+## JSON schema reference
+
+| Property | Type                | Description                                                        |
+| -------- | ------------------- | ------------------------------------------------------------------ |
+| tag      | String              | The tag to be rendered (defaults to div)                           |
+| children | Array               | Children nodes                                                     |
+| class    | String/Array/Object | The "class" attribute                                              |
+| style    | String/Array/Object | The "style" attribute                                              |
+| text     | String              | The text to be rendered inside (innerText)                         |
+| html     | String              | The HTML to be rendered (innerHTML)                                |
+| attrs    | Object              | HTML attributes                                                    |
+| model    | String              | The model to link with the form input (only for form input fields) |
+| validate | Array               | The model validation rules                                         |
+| on       | Object              | Event handlers                                                     |
+| if       | Array               | Conditional logic                                                  |
