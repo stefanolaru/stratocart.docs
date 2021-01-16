@@ -1,6 +1,6 @@
 # stratocart.js
 
-```html
+```markup
 <script src="https://js.stratocart.com/latest.js"></script>
 <script>
     window.Stratocart && window.Stratocart.init("shop/id");
@@ -11,10 +11,10 @@ stratocart.js is a small Javascript library that will help seamlessly integrate 
 
 Getting started is as easy:
 
-1. Visit https://stratocart.com to get a shop ID.
+1. Visit [https://stratocart.com](https://stratocart.com) to get a shop ID.
 2. Install stratocart.js via script tag.
 
-```js
+```javascript
 // opens the cart
 Stratocart.open();
 
@@ -28,7 +28,7 @@ Whoa! That's simple!
 
 ## Add an item
 
-```js
+```javascript
 Stratocart.addItem({
     id: "unique-product-id",
     name: "My nice Product",
@@ -49,18 +49,18 @@ Add an item to the shopping cart.
 
 _Returns a Promise_
 
-| Property | Type     | Description                     |
-| -------- | -------- | ------------------------------- |
-| id       | String\* | The item unique ID              |
-| name     | String\* | Item name                       |
-| price    | Int\*    | Item price in cents (price/100) |
-| quantity | Int\*    | Item quantity                   |
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| id | String\* | The item unique ID |
+| name | String\* | Item name |
+| price | Int\* | Item price in cents \(price/100\) |
+| quantity | Int\* | Item quantity |
 
-See the complete list of [CartItem properties](#cartitem)
+See the complete list of [CartItem properties](stratocart.js.md#cartitem)
 
 ## Update an item
 
-```js
+```javascript
 Stratocart.updateItem("unique-product-id", {
     quantity: 3,
 })
@@ -76,13 +76,13 @@ Stratocart.updateItem("unique-product-id", {
 
 Update properties of a single cart item by ID.
 
-See the complete list of [CartItem properties](#cartitem)
+See the complete list of [CartItem properties](stratocart.js.md#cartitem)
 
 _Returns a Promise_
 
 ## Remove an item
 
-```js
+```javascript
 Stratocart.removeItem("unique-product-id")
     .then((item) => {
         // successfully removed
@@ -100,7 +100,7 @@ _Returns a Promise_
 
 ## Fetch Cart
 
-```js
+```javascript
 Stratocart.fetch()
     .then((cart) => {
         // successfully returned the updated cart object
@@ -114,11 +114,11 @@ Stratocart.fetch()
 
 Refresh the cart object from the API.
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
 ## Update Cart
 
-```js
+```javascript
 Stratocart.update({
     shipping_method: "express",
 })
@@ -132,13 +132,13 @@ Stratocart.update({
     });
 ```
 
-Updates the [Cart](#cart) object properties.
+Updates the [Cart](stratocart.js.md#cart) object properties.
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
 ## Delete Cart
 
-```js
+```javascript
 Stratocart.delete()
     .then(() => {
         // successfully deleted the cart
@@ -156,7 +156,7 @@ _Returns a Promise_
 
 ## Get cart items
 
-```js
+```javascript
 Stratocart.getItems()
     .then((items) => {
         // successfully returned the array of items
@@ -175,11 +175,11 @@ Stratocart.getItems()
 
 Get the list of items from the cart.
 
-_Returns a Promise with an array of [CartItem](#cartitem) on success_
+_Returns a Promise with an array of_ [_CartItem_](stratocart.js.md#cartitem) _on success_
 
 ## Empty the cart
 
-```js
+```javascript
 Stratocart.empty()
     .then(() => {
         // successfully emptied the cart
@@ -197,7 +197,7 @@ _Returns a Promise_
 
 ## Set Customer
 
-```js
+```javascript
 Stratocart.setCustomer({
     email: "john.doe@stratocart.com",
     name: "John Doe",
@@ -214,11 +214,11 @@ Stratocart.setCustomer({
 
 Update the cart with customer information.
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
 ## Set Shipping Info
 
-```js
+```javascript
 // set shipping amount
 Stratocart.setShippingAmount(amount)
     .then((cart) => {
@@ -253,39 +253,39 @@ Stratocart.setShippingMethod(method)
     });
 ```
 
-### setShippingAmount(amount)
+### setShippingAmount\(amount\)
 
 Update the shipping amount. Helpful when you want to set the shipping costs from external source.
 
-| Parameter | Type  | Description                         |
-| --------- | ----- | ----------------------------------- |
-| amount    | Int\* | Shipping price in cents (price/100) |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| amount | Int\* | Shipping price in cents \(price/100\) |
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
-### setShippingAddress(address)
+### setShippingAddress\(address\)
 
 Update the shipping address.
 
-| Parameter | Type     | Description                          |
-| --------- | -------- | ------------------------------------ |
-| address   | Object\* | Shipping address [Address](#address) |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | Object\* | Shipping address [Address](stratocart.js.md#address) |
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
-### setShippingMethod(method)
+### setShippingMethod\(method\)
 
 Update the shipping method.
 
-| Parameter | Type     | Description        |
-| --------- | -------- | ------------------ |
-| method_id | String\* | Shipping method ID |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| method\_id | String\* | Shipping method ID |
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
 ## Set Billing Info
 
-```js
+```javascript
 // set billing address
 Stratocart.setBillingAddress(address)
     .then((cart) => {
@@ -309,37 +309,37 @@ Stratocart.setBillingMethod(method)
     });
 ```
 
-### setBillingAddress(address)
+### setBillingAddress\(address\)
 
 Update the billing address.
 
-| Parameter | Type     | Description                         |
-| --------- | -------- | ----------------------------------- |
-| address   | Object\* | Billing address [Address](#address) |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| address | Object\* | Billing address [Address](stratocart.js.md#address) |
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
-### setBillingMethod(method)
+### setBillingMethod\(method\)
 
 Update the billing method.
 
-| Parameter | Type     | Description       |
-| --------- | -------- | ----------------- |
-| method_id | String\* | Billing method ID |
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| method\_id | String\* | Billing method ID |
 
-_Returns a Promise with the full [Cart](#cart) object on success_
+_Returns a Promise with the full_ [_Cart_](stratocart.js.md#cart) _object on success_
 
 ## Events
 
 These events will fire anytime an action happen in the shopping cart or checkout flow. Use listeners to customise the experience.
 
-```js
+```javascript
 Stratocart.on("ready", (data) => {
     // GumCart is loaded, do something here
 });
 ```
 
-```js
+```javascript
 Stratocart.on("totals.change", (data) => {
     // GumCart totals change, console log the amounts
     console.log("Shipping: $" + data.shipping_price);
@@ -348,15 +348,16 @@ Stratocart.on("totals.change", (data) => {
 });
 ```
 
-| Event name      | Data     | Description                |
-| --------------- | -------- | -------------------------- |
-| ready           | -        | The cart is loaded & ready |
-| open            | -        | The shopping cart opened   |
-| close           | -        | The shopping cart closed   |
-| item.added      | item     | Item was added to cart     |
-| item.updated    | item     | The cart item was updated  |
-| item.removed    | item     | Item was removed from cart |
-| customer.change | customer | Customer data was updated  |
-| shipping.change | shipping | Shipping info was updated  |
-| billing.change  | billing  | Billing info was updated   |
-| order.create    | order    | The order was created      |
+| Event name | Data | Description |
+| :--- | :--- | :--- |
+| ready | - | The cart is loaded & ready |
+| open | - | The shopping cart opened |
+| close | - | The shopping cart closed |
+| item.added | item | Item was added to cart |
+| item.updated | item | The cart item was updated |
+| item.removed | item | Item was removed from cart |
+| customer.change | customer | Customer data was updated |
+| shipping.change | shipping | Shipping info was updated |
+| billing.change | billing | Billing info was updated |
+| order.create | order | The order was created |
+
