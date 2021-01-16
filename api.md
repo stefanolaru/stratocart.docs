@@ -1,6 +1,6 @@
 # API Reference
 
-Welcome to the GumCart API. You can use this to access GumCart API endpoints, which can get information about your shop & orders.
+Welcome to the Stratocart API. You can use this to access Stratocart API endpoints, which can get information about your shop & orders.
 
 ## Authentication
 
@@ -8,14 +8,14 @@ Welcome to the GumCart API. You can use this to access GumCart API endpoints, wh
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "https://api.gumcart.com"
+curl "https://api.stratocart.com"
   --header 'X-APIKEY: yourapikey' \
   --header 'Content-Type: application/json' \
 ```
 
 > Make sure to replace `yourapikey` with your API key.
 
-GumCart uses API keys to allow access to the API. To obtain an API key please go to https://www.gumcart.com
+Stratocart uses API keys to allow access to the API. To obtain an API key please go to https://www.stratocart.com
 
 We expect for the API key to be included for all the private API requests in a header that looks like the following:
 
@@ -50,7 +50,7 @@ The <strong>/cart</strong> methods are publicly accessible.
 > Sample request for retrieving the cart data:
 
 ```shell
-curl -x GET "https://api.gumcart.com/cart/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
+curl -x GET "https://api.stratocart.com/cart/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
   -h 'X-SHOPID: 0a6c50ce-9006-4bda-bea4-2a6832f86684' \
 ```
 
@@ -71,7 +71,7 @@ This method will return the updated [Cart](#cart) object on success or [Error](#
 > Sample request for emptying the cart items:
 
 ```shell
-curl -x PATCH "https://api.gumcart.com/cart/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
+curl -x PATCH "https://api.stratocart.com/cart/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
   -h 'X-SHOPID: 0a6c50ce-9006-4bda-bea4-2a6832f86684' \
   -h 'Content-Type: application/json' \
   -d '{"items": []}'
@@ -92,7 +92,7 @@ This method will return the updated [Cart](#cart) object on success or [Error](#
 > Sample request for deleting the cart with all it's data:
 
 ```shell
-curl -x DELETE "https://api.gumcart.com/cart/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
+curl -x DELETE "https://api.stratocart.com/cart/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
   -h 'X-SHOPID: 0a6c50ce-9006-4bda-bea4-2a6832f86684' \
 ```
 
@@ -121,10 +121,10 @@ The <strong>/cartitems</strong> methods are publicly accessible.
 > Sample request for adding an item to cart:
 
 ```shell
-curl -x POST "https://api.gumcart.com/cartitems/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
+curl -x POST "https://api.stratocart.com/cartitems/a35a29b5-4a0d-4681-b070-ee19db86ed46" \
   -h 'X-SHOPID: 0a6c50ce-9006-4bda-bea4-2a6832f86684' \
   -h 'Content-Type: application/json' \
-  -d '{"id": "HEADPHONES", "name": "Wireless Headphones", "price": 89, "quantity": 1, "description": "Something here to be updated", "images": ["https://www.gumcart.com/assets/images/product-1.jpg"]}'
+  -d '{"id": "HEADPHONES", "name": "Wireless Headphones", "price": 89, "quantity": 1, "description": "Something here to be updated", "images": ["https://www.stratocart.com/assets/images/product-1.jpg"]}'
 ```
 
 > Sample cart item object:
@@ -136,7 +136,7 @@ curl -x POST "https://api.gumcart.com/cartitems/a35a29b5-4a0d-4681-b070-ee19db86
     "price": 89,
     "quantity": 1,
     "description": "Something here to be updated",
-    "images": ["https://www.gumcart.com/assets/images/product-1.jpg"]
+    "images": ["https://www.stratocart.com/assets/images/product-1.jpg"]
 }
 ```
 
@@ -185,11 +185,11 @@ In progress.
 ### Get Shop (public data)
 
 ```shell
-curl -x GET "https://api.gumcart.com/shop" \
+curl -x GET "https://api.stratocart.com/shop" \
   -h 'X-SHOPID: 0a6c50ce-9006-4bda-bea4-2a6832f86684' \
 ```
 
-`GET https://api.gumcart.com/shop`
+`GET https://api.stratocart.com/shop`
 
 We expect for the shop_id to be included in the API requests in a header that looks like the following:
 
