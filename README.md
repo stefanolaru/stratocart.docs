@@ -1,2 +1,3 @@
-# stratocart.docs
-Stratocart docs
+# Stratocart Documentation
+
+Welcome to the Stratocart documentation.
