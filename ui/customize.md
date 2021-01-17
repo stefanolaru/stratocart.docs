@@ -58,7 +58,7 @@ Will output this HTML.
 
 **on** property is used to listen to DOM events and run some JavaScript when they're triggered. Multiple event listeners can be attached in name value pairs.
 
-The event handlers are built in or custom functions, their name will be passed as string bettwen {{handlebars}} prefixed with "fn:"
+See [Functions & Variables](#functions-variables)
 
 ```json
 {
@@ -136,6 +136,10 @@ Built-in validation rules
 
 The conditional logic allows to update DOM element properties dynamically, react to model data changes. The **if** property is an Array<br /> **[<span style="color:#C00">conditions</span>, <span style="color:#C00">properties_if_true</span>, <span style="color:#C00">properties_if_false</span>]**
 
+The conditions will be declared as object of name/value pairs<br />
+
+{**<span style="color:#C00">operator</span>**: **<span style="color:#C00">parameters</span>**}
+
 The example below will switch the shipping address state field from a select dropdown to a text input based on shipping country input.
 
 ```json
@@ -162,3 +166,19 @@ The example below will switch the shipping address state field from a select dro
     }
 }
 ```
+
+## Vars & Functions
+
+Built in variables and functions can be accessed/triggered using {{handlebars}} notation, functions will be prefixed with 'fn:'<br >
+
+{{**<span style="color:#C00">variable_name</span>**}} or
+{{**<span style="color:#C00">fn:functionName</span>**}}
+
+Variables will access the cart data model.
+
+Built in functions
+
+| Name               | Description                                 |
+| ------------------ | ------------------------------------------- |
+| **closeCheckout**  | Close the checkout (back to shopping cart). |
+| **submitCheckout** | Submit checkout form                        |
